@@ -1,0 +1,20 @@
+<form class="new_task" id="new_task" action="/tasks" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="fUrBymmVzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TFoB23OG5l1eo731o8l6g==">
+  <label for="restaurant_name">Title</label>
+  <input type="text" name="task[title]" id="task_title">
+  <label for="task_details">Details</label>
+  <input type="text" name="restaurant[address]" id="restaurant_address">
+  <input type="submit" name="commit" value="Create Restaurant" data-disable-with="Create Restaurant">
+</form>
+
+<p>
+  <%= form_for(@restaurant) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <%= f.submit %>
+  <% end %>
+</p>
